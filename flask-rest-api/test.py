@@ -12,8 +12,11 @@ for i in range(len(data)):
     response = requests.put(BASE + "video/" + str(i), data[i])
     print(response.json())
 
-response = requests.delete(BASE + "video/0")
+response = requests.delete(BASE + "video/2")
 print(response)
 
 response = requests.get(BASE + "video/2")
+print(response.json())
+
+response = requests.patch(BASE + "video/2", {"views": 1999})
 print(response.json())
